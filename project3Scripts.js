@@ -14,7 +14,7 @@ var exposer = (function() {
             items: [
                 {
                     name: "table",
-                    description: "Graded papers are scattered across the table.",
+                    description: "Graded papers are scattered across the table. You pick one up. Looks like Rachel Amber got an F. I suppose that's what happens when you answer every question with, 'Turtles are cool.'.",
                     pattern: /table/,
                     isHiding: false
                 },
@@ -77,6 +77,12 @@ var exposer = (function() {
                     name: "tv",
                     description: "The family dog watches tv with everyone. I'm convinced he's writing movie reviews under the handle woof. You check the media center even though each cabinet only holds roughly twenty vhs tapes. Your sister may be the champion, but even she can't hide here.",
                     pattern: /tv/
+                },
+                
+                {
+                    name: "table",
+                    description: "A large hard cover book titled <i>Riding the Route: A traveller's guide to Route 66</i> lies in the middle of the table. Shockingly, you find dog hair underneath the table.",
+                    pattern: /couch/
                 }
                     ],
             dir: [
@@ -451,9 +457,15 @@ var exposer = (function() {
 
 
 
-/*******************************************************************************************************************************
-**********************************************************Game Engine*******************************************************************************************************/
 /************************************************************************************************************************************************************************************************************************************************************************************************/
+/************************************************************************************************************************************************************************************************************************************************************************************************/
+
+
+
+
+
+
+
 
 
 
@@ -464,6 +476,7 @@ var GameEngine = (function(choice, roomNum) {
     function hidingPlaceGenerator() {
         
         var randNum = Math.random();
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DON'T FORGET TO REMOVE CONSOLE.LOGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (randNum < 0.1) {
             exposer.roomList[0].items[0].isHiding = true;
         } else if (randNum > 0.1 && randNum < 0.2) {
